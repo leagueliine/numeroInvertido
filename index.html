@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inversão</title>
+</head>
+
+<body>
+    <input type="text" id="num1" /> <br>
+
+    <button id="button">Press to invert</button>
+    <input type="text" id="resultado" />
+
+
+
+    <script>
+        const inverter = () => {
+            let n1 = parseInt(document.getElementById("num1").value);
+            let inverted = 0;
+            while (n1 > 0) {
+                inverted = (inverted * 10) + (n1%10);
+                n1 = parseInt(n1 / 10);
+            }
+            return inverted;
+        }
+
+        const button = document.getElementById("button");
+        button.addEventListener("click", () => {
+            const resultado = inverter();
+            document.getElementById("resultado").value = resultado
+        });
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
